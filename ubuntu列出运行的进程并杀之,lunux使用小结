@@ -1,0 +1,9 @@
+ps -ef |grep tomcat
+
+sudo kill -9 id值
+
+使用终端打开程序，关闭终端不关闭程序的方法
+screen command
+nohup command &		//挂起程序
+
+
