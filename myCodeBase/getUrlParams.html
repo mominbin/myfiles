@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<script type="text/javascript" src="jsBase/jquery-1.9.1.min.js"></script>
+    </head>
+<body>
+
+	<input type="button" value="click me and show the params of the current url!" onclick="getUrlParams()" />
+<script>
+function getUrlParams() {
+	var url = location.href;　　
+	var paraString = url.substring(url.indexOf("?") + 1, url.length).split("&");　　
+	var paraObj = {}　　
+	for (i = 0; j = paraString[i]; i++) {　　
+		paraObj[j.substring(0, j.indexOf("="))] = j.substring(j.indexOf("=") + 1, j.length);　　
+	}
+	for(x in paraObj){
+		alert(x+"="+paraObj[x]);
+	}
+	// var returnValue = paraObj[paras.toLowerCase()];　　
+	// if (typeof(returnValue) == "undefined") {　　
+	// 	return "";　　
+	// } else {　　
+	// 	alert(returnValue);
+	// 	return returnValue;　　
+	// }
+}
+
+</script>
+</body>
+</html>
