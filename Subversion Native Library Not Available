@@ -1,0 +1,21 @@
+Subversion Native Library Not Available，加载不到JavaHL。如图： 
+ 
+    * Windows 
+              最简单的解决办法是安装sliksvn，安装后重新启动eclipse就正常了。 
+             sliksvn下载地址：http://www.sliksvn.com/en/download 
+    * Ubuntu 
+            平时比较多使用Ubuntu，而Ubuntu的解决方法是： 
+              1. 安装libsvn-java：在终端输入下面两个命令。(use the following instructions to install libsvn-java ) 
+sudo apt-get update 
+sudo apt-get install libsvn-java 
+             2. 查找刚刚安装的依赖库的位置。(find the libraries just installed) 
+dpkg -L libsvn-java 
+ 
+         3. 复制依赖库到jre里对应的位置 (copy the libraries into jre lib dir) 
+              32位系统 (32bit): 
+cp /usr/lib/jni/libsvnjavahl-1* $JAVA_HOME/jre/lib/i386 
+              64位系统 (64bit): 
+cp /usr/lib/jni/libsvnjavahl-1* $JAVA_HOME/jre/lib/amd64 
+           4. 重新打开eclipse (restart your eclipse) 
+          官方的解释与解决办法可以在这里看到: http://subclipse.tigris.org/wiki/JavaHL 
+补充：如果你使用的eclipse时myeclipse那么就要注意了，myeclipse是使用自带的jre的，所以你复制文件就要复制到myeclipse对应的jre了。
