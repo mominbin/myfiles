@@ -2,25 +2,40 @@
 <html lang="zh-cn">
     <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<script type="text/javascript" src="jsBase/jquery-1.9.1.min.js"></script>
     </head>
 <body>
-<p>点击下面的按钮，循环遍历对象 "person" 的属性。</p>
-<button onclick="myFunction()">点击这里</button>
-<p id="demo"></p>
+<div style="display:block" class="tip">
+		<h6>我不想贷了原因</h6>
+		<div class="input fix">
+		<ul>
+		<li>贷款编号<input type="text" value="${loanInfo.serialNo}" name="applyNo"/></li>
+		<li>贷款金额<input type="text" value="${loanInfo.loanMount}" name=""/></li>
+		<li>不贷原因*<span id="hint"></li>
+			<li><textarea id="qiutReasonText" name="quitReason" rows="5" cols=""></textarea></li>
+			
+		</ul>
+		
+		</div>
+		
+		<div class="btn fix">
+			<input type="button" class="btnStyle" value="提&nbsp;交" onclick="IsNullCheck()">
+		</div>
+		
+	</div>
 
 <script>
-function myFunction()
-{
-var x;
-var txt="";
-var person={fname:"Bill",lname:"Gates",age:56}; 
+function IsNullCheck(){
+	if ($("#qiutReasonText").val().length>6){
+		$("#psform").submit();
+	}else{
+		$("#hint").text("please input the reason ,must larger than 6")
+	}
 
-for (x in person)
-{
-txt=txt + person[x];
 }
-document.getElementById("demo").innerHTML=txt;
-}
+jQuery(document).ready(function($) {
+	$("#qiutReasonText").focus(function(){$("#hint").text("")});
+});
 </script>
 </body>
 </html>
