@@ -1,0 +1,36 @@
+
+
+参考ubuntukylin.com wuy069的解决方案
+
+
+1。切换到root权限
+
+       sudo -i
+
+2。进入apt源列表
+
+      cd /etc/apt/sources.list.d
+
+3。添加ubuntu 13.04的源，因为13.10的后续版本废弃了ia32-libs
+
+ echo "deb http://archive.ubuntu.com/ubuntu/ raring main restricted universe multiverse" > ia32-libs-raring.list
+echo "deb http://mirrors.163.com/ubuntu/ raring main universe restricted multiverse" > ia32-libs-raring.list
+echo "deb http://cz.archive.ubuntu.com/ubuntu precise main universe" > ia32-libs-precise.list(经测试，这个使可以使用的)
+
+
+4。更新源并安装ia32-libs
+
+      apt-get update
+
+      apt-get install ia32-libs
+
+
+5。恢复源
+
+      rm ia32-libs-raring.list
+
+      apt-get update
+
+
+注：测试后发现有404错误，可能是ubuntu官方确实连源都废弃掉了，想想国内的163和搜狐之类的可能还有保留，所有就想试试。
+均告失败，郁闷！
