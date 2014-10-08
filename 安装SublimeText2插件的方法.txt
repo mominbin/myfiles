@@ -1,0 +1,124 @@
+1.直接安装
+
+安装Sublime text 2插件很方便，可以直接下载安装包解压缩到Packages目录（菜单->preferences->packages）。
+2.使用Package Control组件安装
+
+也可以安装package control组件，然后直接在线安装：
+按Ctrl+`调出console
+粘贴以下代码到底部命令行并回车：
+import urllib2,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();os.makedirs(ipp) if not os.path.exists(ipp) else None;open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read())
+重启Sublime Text 2。
+如果在Perferences->package settings中看到package control这一项，则安装成功。
+如果这种方法不能安装成功，可以到这里下载文件手动安装。
+用Package Control安装插件的方法：
+
+按下Ctrl+Shift+P调出命令面板
+输入install 调出 Install Package 选项并回车，然后在列表中选中要安装的插件。
+不爽的是，有的网络环境可能会不允许访问陌生的网络环境从而设置一道防火墙，而Sublime Text 2貌似无法设置代理，可能就获取不到安装包列表了。
+
+插件推荐：
+已安装插件列表：
+
+l ZenCoding：前端必备，快速开发HTML/CSS
+
+输入 div.wrapper>div.header+div.main+div.footer 按下Tab，立刻变成
+
+或者按下ctrl+alt+enter，激发zencoding控制台，可看到整个动态的过程。
+
+l JsFormat，格式化js代码，这个插件很有用，我们有时在网上看到某些效果，想查看是怎么实现的，但是代码被压缩过，很难阅读，不用怕，用ST2打开，按下ctrl+alt+5（这是我设置的快捷键），即可让代码还原，莫非是武林中失传已久的“还我靓靓拳”。
+
+
+l Tag 格式化标签，让乱七八糟的代码，瞬间整齐清晰。
+l BracketHighlighter，括弧高亮显示
+l Clipboard History，剪切板历史，可以保存多个复制信息，按下ctrl+alt+v，可以选择历史剪切板
+
+l Goto-CSS-Declaration，跳转到css文件该class的声明处，方便修改查看，如图下所示，注意对应的css文件要同时打开才行。
+
+
+l GotoRecent，打开最近的文件，系统有这个功能，但只能看最近8个，有点不爽，按ctrl+e，选择即可。
+l SCSS，支持scss的语法高亮，里面附带了好多CSS Snippet，无论现用或者改造成，都可节省不少时间。
+
+还有很多插件，jquery语法提示，jsHint等等。
+==========================================================================================================
+**********************************************************************************************************
+==========================================================================================================
+
+开始使用Sublime Text：
+Sublime Text有Dev版本，推荐使用，下载地址，一般推荐下载便携版本（Portable version），这样拿来拿去很方便，也不用安装，而且插件和主体在一个目录下，便携。
+Sublime Text快捷键：
+Ctrl+Shift+P：打开命令面板
+Ctrl+P：搜索项目中的文件
+Ctrl+G：跳转到第几行
+Ctrl+W：关闭当前打开文件
+Ctrl+Shift+W：关闭所有打开文件
+Ctrl+Shift+V：粘贴并格式化
+Ctrl+D：选择单词，重复可增加选择下一个相同的单词
+Ctrl+L：选择行，重复可依次增加选择下一行
+Ctrl+Shift+L：选择多行
+Ctrl+Shift+Enter：在当前行前插入新行
+Ctrl+X：删除当前行
+Ctrl+M：跳转到对应括号
+Ctrl+U：软撤销，撤销光标位置
+Ctrl+J：选择标签内容
+Ctrl+F：查找内容
+Ctrl+Shift+F：查找并替换
+Ctrl+H：替换
+Ctrl+R：前往 method
+Ctrl+N：新建窗口
+Ctrl+K+B：开关侧栏
+Ctrl+Shift+M：选中当前括号内容，重复可选着括号本身
+Ctrl+F2：设置/删除标记
+Ctrl+/：注释当前行
+Ctrl+Shift+/：当前位置插入注释
+Ctrl+Alt+/：块注释，并Focus到首行，写注释说明用的
+Ctrl+Shift+A：选择当前标签前后，修改标签用的
+F11：全屏
+Shift+F11：全屏免打扰模式，只编辑当前文件
+Alt+F3：选择所有相同的词
+Alt+.：闭合标签
+Alt+Shift+数字：分屏显示
+Alt+数字：切换打开第N个文件
+Shift+右键拖动：光标多不，用来更改或插入列内容
+鼠标的前进后退键可切换Tab文件
+按Ctrl，依次点击或选取，可需要编辑的多个位置
+按Ctrl+Shift+上下键，可替换行
+
+Sublime Text 设置：
+Setting User
+以下是我使用的
+	"font_face": "courier new",
+	"font_size": 9.0,
+	"highlight_line": true,
+	"scroll_past_end": false,
+	"tab_size": 4,
+	"theme": "Soda Dark.sublime-theme",
+	"word_wrap": true
+}
+Sublime Text 插件：
+建议先启用Package Control，作用是安装插件时很方便，启用方法：菜单栏 – View – Show Console，贴入以下代码并回车，然后重启Sublime。如果你所在的网络无法启用，则无法使用，手动搜索下载去吧（话说你的网也被封了？）。
+import urllib2,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();os.makedirs(ipp) if not os.path.exists(ipp) else None;open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read())
+开始安装一些非常实用的插件吧，Ctrl+Shift+P（菜单 – Tools – Command Paletter），输入 install 选中Install Package并回车，输入或选择你需要的插件回车就安装了（注意左下角的小文字变化，会提示安装成功），安装其它插件也是这个方法，非常快速。
+ZenCoding
+不得不用的一款前端开发方面的插件，Write less , show more.安装后可直接使用，Tab键触发，Alt+Shift+W是个代码机器。
+Alignment
+代码对齐，如写几个变量，选中这几行，Ctrl+Alt+A，哇，齐了。
+Prefixr
+写 CSS可自动添加 -webkit 等私有词缀，Ctrl+Alt+X触发。
+Tag
+Html格式化，右键Auto-Format Tags on Ducument。
+Clipboard History
+剪贴板历史记录，显示更多历史复制，Ctrl+Shift+V触发。
+SideBarEnhancements
+侧栏右键功能增强，非常实用
+Theme – Soda
+完美的编码主题，用过的都说好，Setting user里面添加”theme”: “Soda Dark.sublime-theme”
+GBK to UTF8
+将文件编码从GBK转黄成UTF8，菜单 – File里面找
+SFTP
+直接编辑 FTP 或 SFTP 服务器上的文件，绝对FTP浮云
+WordPress
+集成一些WordPress的函数，对于像我这种经常要写WP模版和插件的人特别有用
+PHPTidy
+整理排版PHP代码
+YUI Compressor
+压缩JS和CSS文件

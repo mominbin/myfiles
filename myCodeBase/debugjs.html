@@ -1,0 +1,24 @@
+<!-- debug the js function-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<script type="text/javascript" src="jsBase/jquery-1.9.1.min.js"></script>
+
+    </head>
+<body>
+<div id="log"></div>
+<input type="button" value="click me!" onclick="getperson()"/>
+</body>
+<script>
+function getperson(){
+person=new Object();
+person.firstname="Bill";
+person.lastname="Gates";
+person.age=56;
+person.eyecolor="blue";
+console.log('persons firstname is %s,persons lastname is %s,persons age is %d ',person.firstname,person.lastname,person.age);
+}
+
+</script>
+</html>

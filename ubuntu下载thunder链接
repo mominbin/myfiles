@@ -1,0 +1,17 @@
+在linux中下载迅雷链接(thunder://)
+
+迅雷下载协议是经过加密的,如：
+thunder://QUFodHRwOi8vd3d3LmNub3N3aWtpLmNvbS93cC1jb250ZW50L3RoZW1lcy9tb25vY2hyb21lL2ltZy9sb2dvLmdpZlpa/
+直接在Linux下面是没有办法下载的。
+
+在ubuntu中
+在终端下用echo url|base64 -d 来解密，并显示地址，如（URL去掉头和尾）：
+echo QUFodHRwOi8vd3d3LmNub3N3aWtpLmNvbS93cC1jb250ZW50L3RoZW1lcy9tb25vY2hyb21lL2ltZy9sb2dvLmdpZlpa
+|base64 -d
+
+显示结果是：AAhttp://www.cnoswiki.com/wp-content/themes/monochrome/img/logo.gifZZ
+
+所以解密后的地址是：http://www.cnoswiki.com/wp-content/themes/monochrome/img/logo.gif
+然后在使用下载工具进行下载！
+
+在线base64解码工具。http://maclife.net/tools/base64/
