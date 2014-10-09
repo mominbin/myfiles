@@ -1,0 +1,67 @@
+<!-- 获取表单中的内容，并且拼接成字符串-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<script type="text/javascript" src="jsBase/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+<form action="confirm/enterprise_property_upload.jsp" method="post" id="epform" enctype="multipart/form-data">
+	<div class="secTitle">
+		企业固定资产信息
+		<input type="button" value="添加" onclick="addAssetsRecode()">
+		<input type="hidden" value="${enterpriseId}" name="enterpriseId"/>
+	</div>
+	<div class="tabContant">
+		<table class="tableStyle1" id="enterprise_assets">
+			<tr>
+				<th>资产类型</th>
+				<th>资产名称</th>
+				<th>资产数量</th>
+				<th>资产总额</th>
+				<th>当前市值</th>
+			</tr>
+			<tr class="assetItem">
+				<td>
+					<input name="assetsType" type="text" class="fix" />
+				</td>
+				<td>
+					<input name="assetsName" type="text" class="fix" />
+				</td>
+				<td>
+					<input name="assetsNumber" type="text" class="fix" />
+				</td>
+				<td>
+					<input name="assetsValue" type="text" class="fix" />
+				</td>
+				<td>
+					<input name="assetsValueCurrent" type="text" class="fix" />
+				</td>
+				<td>
+					<input type="hidden" value="${ep.serialno }" name="serialno"/>
+				</td>
+			</tr>
+		</table>
+	</div>
+</form>
+<input value="clickToJson" onclick="show()" type="button" />
+<input value="" id="show" type="text" />
+</body>
+<script>
+		//添加一行
+	function addAssetsRecode() {
+		var inputNode = $(".assetItem").first().clone();
+		$("#enterprise_assets").append(inputNode);
+	}
+
+function show(){
+	var ass=toJson();
+	var str=JSON.stringify(ass);
+	console.log("str value is:"+ass);
+	$("#show").attr("value",str);
+
+}
+</script>
+<script type="text/javascript" src="js/toJson.js"></script>
+<!-- <script type="text/javascript" src="js/JSON-js-master/json.js"></script> -->
+</html>
