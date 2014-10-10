@@ -45,7 +45,7 @@
 	</div>
 </form>
 <input value="clickToJson" onclick="show()" type="button" />
-<input value="" id="show" type="text" />
+<input value="" id="show" type="text" style="width: 1000px;" />
 </body>
 <script>
 		//添加一行
@@ -57,7 +57,7 @@
 function show(){
 	var ass=toJson();
 	var str=JSON.stringify(ass);
-	console.log("str value is:"+ass);
+	console.log("str value is:"+str);
 	$("#show").attr("value",str);
 
 }
