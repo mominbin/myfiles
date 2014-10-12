@@ -1,0 +1,7 @@
+when i happen to meet a problem on the git fetch command,which is like this:
+fatal:Refusing to fetch into current branch refs/heads/master of non-bare repository
+And I got the answer in the stackoverflow.com.
+use the command as follow:
+git remote add otherrepo thehost:/the/path.git
+my detail is: git remote add myfiles git@github.com:mominbin/myfiles.git
+it looks like we should always do this like this after we clone a repository.
