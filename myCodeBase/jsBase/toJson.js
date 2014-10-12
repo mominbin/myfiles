@@ -16,7 +16,7 @@ function toJson(){
 			jo[name]=value;
 		}
 		asserts.push(jo);
-		//console.log(JSON.stringify(jo));
+		console.log(JSON.stringify(jo));
 	}
 	console.log(asserts);
 	return asserts;
