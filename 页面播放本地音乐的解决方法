@@ -1,0 +1,4 @@
+用File API
+http://antimatter15.github.io/player/player.html
+这个可以播放本地音乐
+是用window.createBlobURL(file)之类的得到Blob路径

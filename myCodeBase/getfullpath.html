@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <SCRIPT type="text/javascript">
+ function $(id)
+    {
+        return document.getElementById(id);
+    }
+    //全局变量，记录文件数；
+    var fileNum=1;
+    //mouseover时，把input file移到按扭上，保证点击的是file，
+    function floatFile()
+    {   
+      console.log("mouseover");
+        $("file"+fileNum).style.posTop=event.srcElement.offsetTop;
+        console.log("style.posTop===="+event.srcElement.offsetTop);
+        $("file"+fileNum).style.posLeft=(event.x-($("file"+fileNum).offsetWidth)/2);
+        console.log('the offsetWidth value is ==>'+$('file'+fileNum).offsetWidth);
+        console.log('style.posLeft value is =>'+(event.x-($("file"+fileNum).offsetWidth)/2));
+    }
+    //选择完一个文件之后，自动创建一个新的div 和 file表单，用于下回使用，hidden刚用过的file
+    function showText(obj)
+    {
+        $(obj.id+"text").innerHTML=obj.value+"&nbsp;&nbsp;<a href='javascript:del("+fileNum+")'>删除</a>";
+        $("file"+fileNum).style.display='none';
+        fileNum=fileNum+1;
+        //直接追加innerHTML(innerHTML+=)会清空原来file中的内容
+        $("div"+(fileNum-1)).insertAdjacentHTML('AfterEnd','<div id="div'+fileNum+'"><div id="file'+fileNum+'text" ></div><input id="file'+fileNum+'" name="myfile" type="file"  onchange="showText(this)"  style="position:absolute;filter:alpha(opacity=0);width:30px;"hidefocus></div>');
+    }
+    function del(id)
+    {
+        $("div"+id).innerHTML="";
+        $("div"+id).style.display="none";
+    }
+ </SCRIPT>
+</head>
+<body>
+ 
+        <div id="tt" style="position:relative;">
+            <input type="button" value="添加附件" onmouseover="floatFile()">
+            <br>
+            <div id="div1">
+                <div id="file1text" ></div>
+                <input id="file1" name="myfile" type="file" onchange="showText(this)" style="position:absolute;filter:alpha(opacity=50);opacity:0.5;width:30px;" hidefocus='true'>
+            </div>
+        </div>
+        </p>
+        <input type="button" onclick="alert($('tt').innerHTML)" value="showHTML">
+    
+  </body>
+</html>

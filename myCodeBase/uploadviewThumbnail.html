@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script language="javascript" type="text/javascript">
+    
+     function ShowImage(value,img)
+    {
+            //alert(value);
+            //检测盘符
+            //alert(value.indexOf(':'));
+            //检测文件是否有扩展名
+            //alert(value.length-value.lastIndexOf('.'));
+            //取文件扩展名
+            //alert(value.substr(value.length-3,3));
+            //检测文件扩展名是否合法
+            //alert(CheckExt(value.substr(value.length-3,3)));
+            
+        if(value.length>5&&value.indexOf(':')==1&&        (value.length-value.lastIndexOf('.'))==4&&CheckExt(value.substr(value.length-3,3)))
+        {
+            img.src=value;
+            img.alt="本地图片预览";
+            img.style.visibility="visible";
+        }
+        else
+        {
+                    img.style.visibility="hidden";
+              }
+    }
+    //检查扩展名是否合法,合法返回True
+    function CheckExt(ext)
+    {
+        //这里设置允许的扩展名
+        var AllowExt="jpg|gif|jpeg|png|bmp";
+        var ExtOK=false;
+            var ArrayExt;
+            if(AllowExt.indexOf('|')!=-1)
+            {
+                ArrayExt=AllowExt.split('|');
+                for(i=0;i<ArrayExt.length;i++)
+                {
+                    if(ext.toLowerCase()==ArrayExt[i])
+                    {
+                        ExtOK=true;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                ArrayExt=AllowExt;
+                if(ext.toLowerCase()==ArrayExt)
+                {
+                    ExtOK=true;
+                }
+            }
+            return ExtOK;
+    }
+</script> 
+</head>
+
+<input id="file" type="file" onfocus="javascript:ShowImage(this.value,document.getElementById('img'))">
+<br />
+<img id="img"  STYLE="visibility:hidden" height="100px" width="100px">
+<body>
+</body>
+</html>
