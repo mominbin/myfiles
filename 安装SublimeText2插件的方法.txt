@@ -122,3 +122,6 @@ PHPTidy
 整理排版PHP代码
 YUI Compressor
 压缩JS和CSS文件
+
+js代码自动提示插件
+sublimeCodeIntel
