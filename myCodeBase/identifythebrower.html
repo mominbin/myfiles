@@ -1,0 +1,29 @@
+<!-- debug the js function
+调试js代码的模板
+-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<script type="text/javascript" src="jsBase/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+
+<input type="button" value="click me!" onclick="isenabled()"/>
+<div id ="hint" ></div>
+</body>
+<script>
+function $(id){
+return document.getElementById(id);
+}
+
+// function console(){}
+// console.log=function (message){
+// var a=$('hint').innerHTML;
+// $('hint').innerHTML=a+'<br>'+message;
+// }
+!+'\v1'||console.log('you can see this beacause your brower is not the ie brower!');
+console.log("is enabled!");
+}
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!-- debug the js function
+调试js代码的模板
+-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<script type="text/javascript" src="jsBase/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="jsBase/createElements.js"></script>
+</head>
+<body>
+	<div  onmouseover="moveInput('itself','houseIdentityFile')" ><a href="##"  id='itself' style="width: 100px;height: 50px"></a><span>
+	房产认证	
+	</span>	
+	</div>
+	<input type="file" id="houseIdentityFile" name="houseIdentityFile" value="上传资料" style="display:none" onchange="change('itself')">
+
+</body>
+<script>
+
+function moveInput(selfid,tagid){
+	var fileInputCount=1;
+	$("#"+tagid).css({   
+		"display":"block",
+		"position": "absolute",   
+		"top": document.getElementById(selfid).offsetTop,
+		"left":document.getElementById(selfid).offsetLeft,
+		"width": document.getElementById(selfid).offsetWidth,
+		"height": document.getElementById(selfid).offsetHeight,
+		"filter":"alpha(opacity:0)",
+		"opacity":0.5
+	});
+	$("#"+selfid).parent().removeAttr('onmouseover');
+	console.log(document.getElementById(selfid).nextSibling.innerHTML);
+}
+
+function change(itself){
+var fileName = $("#houseIdentityFile").val().split('\\').pop();
+$("#"+itself).next().text(fileName);
+}
+//add a file input button 
+//parse the str element to be node
+function isenabled(){
+console.log("is enabled!");
+}
+</script>
+</html>

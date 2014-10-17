@@ -1,0 +1,57 @@
+<!-- debug the js function
+调试js代码的模板
+-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<script type="text/javascript" src="jsBase/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="jsBase/createElements.js"></script>
+</head>
+<body>
+<input type="button" value="click me!" onclick="isenabled()"/>
+<input id="tagname" type="text">
+<div>
+	<textarea id="tagattr"></textarea>
+</div>
+<input type="button" value="click me to add element" onclick="addnode()">
+<div id="elemdiv"></div>
+</body>
+<script>
+function addnode(){
+	var tagname=$("#tagname").val();
+	var attrStr=$("#tagattr").val();
+	if(trim(attrStr).length>0){
+		var attrjson=$.parseJSON($("#tagattr").val());
+		$("#elemdiv").append(make(tagname,attrjson));
+	}else{
+		$("#elemdiv").append(make(tagname));
+	}
+	//var attr=eval('('+tirm(attrStr)+')');
+	
+	//console.log(attr);
+	
+	//for(var name in attrjson){
+	//console.log("name==>"+name+",value==>"+attr[name]);
+	//}
+}
+  //去左空格;   
+ function ltrim(s){     
+    return s.replace(/(^\s*)/, "");  
+ }   
+ //去右空格;   
+function rtrim(s){   
+  return s.replace(/(\s*$)/, "");  
+}   
+ //去左右空格;   
+ function trim(s){  
+   //s.replace(/(^\s*)|(\s*$)/, "");  
+  return rtrim(ltrim(s));   
+ 
+ }   
+ 
+function isenabled(){
+console.log("is enabled!");
+}
+</script>
+</html>

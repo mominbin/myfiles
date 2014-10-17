@@ -49,8 +49,7 @@
 </body>
 	<script>
 		//添加一行
-	function addAssetsRecode() {
-	
+function addAssetsRecode() {	
 	var nodeStr='<td><input name="assetsType" type="text" class="fix" /></td><td><input name="assetsName" type="text" class="fix" /></td><td><input name="assetsNumber" type="text" class="fix" /></td><td><input name="assetsValue"  type="text" class="fix" /></td><td><input name="assetsValueCurrent" type="text" class="fix" /></td><td><input type="hidden" value="new" name="serialno"/></td>';
 	var node=parseDom(nodeStr);
 	$("#enterprise_assets tbody").append(node);
