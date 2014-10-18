@@ -1,3 +1,4 @@
+<!--获取触发事件的节点-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,18 +7,14 @@
     <script type="text/javascript" src="jsBase/jquery-1.9.1.min.js"></script>
 </head>
 <body>
-   <input type="button" value="pup a window" onclick='createWindow()'>
+   <!-- <input type="button" value="pup a window" onclick='catchEventSource()'> -->
+   <input value="clickme" type="button" onclick="catchsource()">
    <div id="w" style="width:500px;height:200px;padding:10px;"></div>
 </body>
 <script type="text/javascript">
-function createWindow(){
-
-    var uploadWin=window.open('createElement.html');
-    alert('test');
+function catchsource(){
+console.log(event);
+console.log(event.target);
 }
-    function test(name){
-        alert('name is ==>'+name);
-    }
-
 </script>
 </html>
