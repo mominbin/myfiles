@@ -1,0 +1,78 @@
+<!-- debug the js function
+array object test
+-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<script type="text/javascript" src="jsBase/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+<input type="button" value="click me!" onclick="isenabled()"/>
+<br>
+<input type="button" value="testArray1" onclick="arraryTest()"/>
+<br>
+<input type="button" value="array test2" test3="" onclick="arrayTest2()">
+<br>
+<input type="button" value="date" object="" test="" onclick="dateTest()">
+<br>
+<input type="button" value="regextest" object="" test="" onclick="regexTest()">
+</body>
+<script>
+function isenabled(){
+var color=['red','green','blank'];
+color.push("write");
+color.pop();
+console.log(color);
+console.log(color.unshift());
+console.log('color object is ==>',color.toString(),color.join('$'));
+console.log("is enabled!");
+}
+//compare function
+function compare(v1,v2){
+	if(v1<v2)
+		return 1;
+	else if(v2<v1)
+		return -1;
+	else
+		return 0;
+}
+function arraryTest(){
+var a=[1,4,7,3,6];
+console.log(a.sort(compare));
+}
+//test reduce  function of array
+function arrayTest2(){
+	var a=[1,3,4,7,5,9,6];
+	var result=a.reduce(function(pre,cur,index,array){
+		console.log(index);
+		return pre+cur;
+	});
+	console.log(result);
+}
+//Date object test
+function dateTest(){
+	var date=new Date();
+	console.log(date);
+	var date2=new Date(Date.UTC(2001,2,3,4,23,1));
+	console.log('date2 String is==>',date2.toLocaleString());
+	console.log('date2 String is==>',date2.toString());
+	console.log('date2 String is==>',date2.valueOf());
+
+}
+//regex function test
+function regexTest(){
+	var s='vat,cat,fat,bat';
+	var pattern=/.at/g;
+	for(var i=0;i<5;i++){
+	var match=pattern.exec(s);
+	console.log(match.index);
+	console.log(match[0]);
+	console.log(pattern.lastIndex);
+	}
+}
+</script>
+</html>
