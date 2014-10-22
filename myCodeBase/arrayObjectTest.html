@@ -15,11 +15,23 @@ array object test
 <br>
 <input type="button" value="testArray1" onclick="arraryTest()"/>
 <br>
-<input type="button" value="array test2" test3="" onclick="arrayTest2()">
+<input type="button" value="array test2"  onclick="arrayTest2()">
 <br>
-<input type="button" value="date" object="" test="" onclick="dateTest()">
+<input type="button" value="date"  onclick="dateTest()">
 <br>
-<input type="button" value="regextest" object="" test="" onclick="regexTest()">
+<input type="button" value="regextest"  onclick="regexTest()">
+<br>
+<input type="button" value="NumberTest"  onclick="numberTest()">
+<br>
+<input type="button" value="StringObjectTest"   onclick="stringTest()">
+<br>
+<input type="input"  id="et"  >
+<input type="button" value="evalObjectTest"   onclick="evalTest()">
+<br>
+<input id="proto" type="button" value="prototypePatternExample"   onclick="createPerson()">
+<br>
+<input  type="button" value="complex mode"   onclick="createHuman()">
+
 </body>
 <script>
 function isenabled(){
@@ -73,6 +85,98 @@ function regexTest(){
 	console.log(match[0]);
 	console.log(pattern.lastIndex);
 	}
+}
+//Number test
+function numberTest(){
+	var n=99;
+	console.log(n.toPrecision(1));
+	console.log(n.toPrecision(2));
+	console.log(n.toPrecision(3));
+}
+//String object useage test
+function stringTest(){
+	var str='当时设置验证的表单';
+	console.log(str.charCodeAt(3));
+	console.log(String.fromCharCode(222,665,556));
+}
+//eval  test
+function evalTest(){
+	var strcommand=$("#et").val();
+	eval(strcommand);
+	var a=[12,32,54,22,65,4];
+	var as=a.toString();
+	var com="var result=Math.max("+as+")";
+	console.log(com);
+	eval(com);
+	console.log(result);
+}
+//prototypePatternExample
+function Person(){}
+function Friend(){}
+
+function createPerson(){
+	Person.prototype.name="negolence";
+	Person.prototype.age=12;
+	Person.prototype.job="microsoft enginner";
+	Person.prototype.sayName=function(){
+		return console.log(this.name);
+	};
+	Friend.prototype={
+		name:'old friend',
+		age:23,
+		job:"google enginner",
+		sayJob:function(){
+			return this.job;
+		}
+	};
+	//recontrate the contrator propertis of contrator
+	Object.defineProperty(Friend.prototype,"constructor",{
+		enumerable:false,
+		value:Friend
+	});
+	var person1=new Person();
+	var person2=new Person();
+	person1.sayName();
+	person2.sayName();
+	console.log(person1.sayName==person2.sayName);
+	console.log('Person is prototype of person1?',Person.prototype.isPrototypeOf(person1));
+	console.log('Person is prototype of person1?',Object.getPrototypeOf(person1));
+	var proto=$("#proto");
+	console.log('The prototype of input button which id is proto is ',Object.getPrototypeOf(proto));
+	person1.name='mo';
+	console.log('person1 name is :',person1.name);
+	console.log('person1 has own name property :',person1.hasOwnProperty("name"));
+	console.log('person1 get own property descriptor :',Object.getOwnPropertyDescriptor(person1,"name"));
+	var key=Object.keys(Person.prototype);
+	console.log('the Person prototype emmuable keyset are:',key);
+	console.log('the person1 emmuable keyset are:',Object.keys(person1));
+	console.log('what the constrator of person1:',person1.constructor);
+	delete person1.name;
+	console.log('person1 name is :',person1.name);
+	console.log('person1 has own name property :',person1.hasOwnProperty("name"));
+	var friend1=new Friend();
+	console.log('what the constrator of friend1:',friend1.constructor);
+	console.log('The class of Date prototype enumerable keys are:',Object.getPrototypeOf(Date))
+}
+//prototype mode and contractor mode defiend class
+function Human(name,age,job){
+	this.name=name;
+	this.age=age;
+	this.job=job;
+	this.friend=["jerry","sufia"];
+}
+	Human.prototype={
+		constructor:Human,
+		sayName:function(){
+			console.log(this.name);
+		}
+	};
+function createHuman(){
+	human1=new Human();
+	human2=new Human();
+	human1.friend.push("mbmo");
+	console.log('human1 friends are:',human1.friend,Object.keys(Object.getPrototypeOf(human1)),Object.keys(human2));
+	console.log('human2 friends are:',human2.friend);
 }
 </script>
 </html>
