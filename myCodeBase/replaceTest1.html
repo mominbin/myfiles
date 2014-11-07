@@ -1,0 +1,58 @@
+<!-- debug the js function
+调试js代码的模板
+-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<script type="text/javascript" src="jsBase/jquery-1.9.1.min.js"></script>
+<title>replace test 1 page</title>
+</head>
+<body>
+<h4>This is replaceTest1 page!</h4>
+<input type="button" value="click me!" onclick="isenabled()"/>
+<br>
+<input type="text" />
+<br>
+<input type="button" value="go to the replaceTest 2 page" onclick="replaceTest()"/>
+<br>
+<h4>identity the plugins of brower have</h4>
+<input type="button" onclick="identifyPlugins()" value="identity">
+<div id="hint"></div>
+</body>
+<script>
+if( !+'\v1'){
+var console={};
+console.log=function(message){
+	document.getElementById("log").innerHTML=message;
+};
+};
+function isenabled(){
+console.log("is enabled!");
+console.log('whole brower name:',navigator.appName);
+console.log('is cookie enabled:',navigator.cookieEnabled);
+console.log('is java enabled:',navigator.javaEnabled());
+console.log('the browers language is :',navigator.language);
+console.log('the browers mimeTypes is :',navigator.mimeTypes);
+console.log('the browers platform is :',navigator.platform);
+console.log('the browers plugins is :',navigator.plugins);
+console.log('the browers usrAgent is :',navigator.userAgent);
+}
+function identifyPlugins(){
+	console.log('has plugins of flash:',hasPlugins('Flash'));
+	console.log('has plugins of quicktime:',hasPlugins('quicktime'));
+}
+function hasPlugins(name){
+	name=name.toLowerCase();
+	for(var i=0;i<navigator.plugins.length;i++){
+		if(navigator.plugins[i].name.toLowerCase().indexOf(name)>-1){
+			return true;
+		}
+	}
+	return false;
+}
+function replaceTest(){
+	location.replace("replaceTest2.html");
+}
+</script>
+</html>

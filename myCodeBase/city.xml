@@ -1,0 +1,18 @@
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<provinces>
+	<province name="湖北">
+		<city>武汉</city>
+		<city>黄石</city>
+		<city>宜昌</city>
+		<city>天门</city>
+	</province>
+	<province name="湖南">
+		<city>邵阳</city>
+		<city>长沙</city>
+		<city>岳阳</city>
+	</province>
+	<province name="广东">
+		<city>广州</city>
+		<city>深圳</city>
+	</province>
+</provinces>

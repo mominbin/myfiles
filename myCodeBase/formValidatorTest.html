@@ -1,0 +1,39 @@
+<!-- 
+test formvalidator
+-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<script type="text/javascript" src="jsBase/jquery-1.9.1.min.js"></script>
+<script src="jsBase/form-validator/jquery.form-validator.min.js"></script>
+</head>
+<body>
+
+<form action="arrayObjectTest.html" method="POST">
+  <p>
+    Name (4 characters minimum):
+    <input name="user" data-validation="length" data-validation-length="min4" />
+  </p>
+  <p>
+    Birthdate (yyyy-mm-dd):
+    <input name="birth" data-validation="birthdate" />
+  </p>
+  <p>
+    Website:
+    <input name="website" data-validation="url" />
+  </p>
+  <p>
+    <input type="submit" />
+  </p>
+</form>
+
+<input type="button" value="click me!" onclick="isenabled()"/>
+</body>
+<script>
+function isenabled(){
+
+console.log("is enabled!");
+}
+</script>
+</html>

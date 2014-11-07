@@ -7,7 +7,20 @@
 </head>
 <body>
 <input type="button" value="click me!" onclick="isenabled()"/>
+<br>
 <input type="button" value="closure test!" onclick="showResult()"/>
+<br>
+<input type="button" value="closureTest1" onclick="closureTest1()"/>
+<br>
+<input type="button" value="closureTest2" onclick="closureTest2()"/>
+<br>
+<input type="button" value="closureTest3" onclick="closureTest3()"/>
+<br>
+<input type="button" value="blockScopeTest" onclick="blockScopeTest()"/>
+<br>
+<p>next we test the priviliage method!</p>
+<input type="button" value="priviliageMethodTest" onclick="priviliageMethodTest()"/>
+<br>
 </body>
 <script>
 function createFunction(){
@@ -25,9 +38,64 @@ function showResult(){
 	console.log(a[i]);
 	}
 }
+function closureTest1(){
+	var count=(function(){
+		var i=0;
+		return function(){
+			console.log(++i);
+		};
+	})();
+	count();
+	count();
+	count();
+}
+function closureTest2(){
+	var name="The window";
+	var object={
+		name : "My Object",
+		getNameFunc : function(){
+			return function(){
+				alert(this);
+				return this.name;
+			};
+		}
+	};
+	alert(object.getNameFunc()());
+}
+function closureTest3(){
+	var name="The window";
+	var object={
+		name:"My Object",
+		getNameFunc : function(){
+			var that=this;
+			return function(){
+				return that.name;
+			};
+		}
+	};
+	console.log(object.getNameFunc()());
+}
+//block scope
+function blockScopeTest(){
+	for(var i=0;i<10;i++){
 
+	}
+	var i;
+	console.log("variable of i value is ",i);
+}
 function isenabled(){
 console.log("is enabled!");
+}
+//priviliage method test
+function Person(name){
+	this.getName=function(){return name};
+	this.setName=function(value){name=value};
+}
+function priviliageMethodTest(){
+	var person1=new Person('mbmo');
+	console.log(person1.getName());
+	person1.setName('mgao');
+	console.log(person1.getName());
 }
 </script>
 </html>

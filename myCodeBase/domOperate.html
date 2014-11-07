@@ -6,21 +6,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <script type="text/javascript" src="jsBase/jquery-1.9.1.min.js"></script>
+
 </head>
 <body>
-<a href="index.html">to home page</a>
+<a href="index.html">to home page!</a>
+<br>
 <input type="button" value="click me!" onclick="isenabled()"/>
-<div id="hint"></div>
+<div id="hint" style="font-size: 6px"></div>
+
+<input type="text" value='click me!' onclick="showAttribute()" >
 </body>
 <script>
-if( !+'\v1'){
-var console={};
-console.log=function(message){
-	document.getElementById("log").innerHTML=message;
-};
-};
-function isenabled(){
-console.log("is enabled!");
-}
+	
 </script>
 </html>

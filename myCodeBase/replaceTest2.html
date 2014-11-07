@@ -6,10 +6,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <script type="text/javascript" src="jsBase/jquery-1.9.1.min.js"></script>
+<title>go to replace test1 page!</title>
 </head>
 <body>
-<a href="index.html">to home page</a>
+<a href="index.html">to home page!</a>
+<h4>This is replaceTest2 page!</h4>
 <input type="button" value="click me!" onclick="isenabled()"/>
+<br>
+<input type="text">
+<br>
+<input type="button" value="go to the replace test 1 page!" onclick="replaceTest()"/>
+<br>
 <div id="hint"></div>
 </body>
 <script>
@@ -21,6 +28,9 @@ console.log=function(message){
 };
 function isenabled(){
 console.log("is enabled!");
+}
+function replaceTest(){
+	location.replace("replaceTest1.html");
 }
 </script>
 </html>
