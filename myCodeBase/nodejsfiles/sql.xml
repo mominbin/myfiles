@@ -1,0 +1,121 @@
+<jbo>
+	<class name="ent_info" label="企业信息表" keyAttributes="entid">
+		<attributes>
+			<attribute name="entid" label="企业编号" type="STRING" length="32"/>
+			<attribute name="entname" label="企业名称" type="STRING" length="32"/>
+			<attribute name="enttype" label="企业类型" type="STRING" length="32"/>
+			<attribute name="checkcode" label="邀请码" type="STRING" length="32"/>
+			<attribute name="orgcode" label="组织机构代码" type="STRING" length="100"/>
+			<attribute name="corporationname" label="法人姓名" type="STRING" length="32"/>
+			<attribute name="corporationid" label="法人身份证号码" type="STRING" length="32"/>
+			<attribute name="representativename" label="法人代表姓名" type="STRING" length="32"/>
+			<attribute name="representativeid" label="法人代表身份证号码" type="STRING" length="32"/>
+			<attribute name="linkman" label="联系人" type="STRING" length="32"/>
+			<attribute name="contacts" label="联系方式" type="STRING" length="32"/>
+			<attribute name="status" label="状态" type="STRING" length="8"/>
+			<attribute name="inputuser" label="录入人" type="STRING" length="32"/>
+			<attribute name="inputtime" label="录入时间" type="STRING" length="20"/>
+			<attribute name="updateuser" label="更新人" type="STRING" length="32"/>
+			<attribute name="updatetime" label="更新时间" type="STRING" length="20"/>
+		</attributes>
+		<manager>
+			<managerProperties>
+				<property name="table" value="ent_info" type="STRING"/>
+				<property name="createKey" value="true" type="STRING"/>
+			</managerProperties>
+		</manager>
+	</class>
+	<class name="ent_relation" label="企业关系表" keyAttributes="serialno">
+		<attributes>
+			<attribute name="serialno" label="编号" type="STRING" length="32"/>
+			<attribute name="coreentid" label="核心企业编号" type="STRING" length="32"/>
+			<attribute name="lowerentid" label="下游企业编号" type="STRING" length="32"/>
+			<attribute name="status" label="状态" type="STRING" length="8"/>
+			<attribute name="inputuser" label="录入人" type="STRING" length="32"/>
+			<attribute name="inputtime" label="录入时间" type="STRING" length="20"/>
+			<attribute name="updateuser" label="更新人" type="STRING" length="32"/>
+			<attribute name="updatetime" label="更新时间" type="STRING" length="20"/>
+		</attributes>
+		<manager>
+			<managerProperties>
+				<property name="table" value="ent_relation" type="STRING"/>
+				<property name="createKey" value="true" type="STRING"/>
+			</managerProperties>
+		</manager>
+	</class>
+	<class name="white_list" label="白名单" keyAttributes="serialno">
+		<attributes>
+			<attribute name="serialno" label="编号" type="STRING" length="32"/>
+			<attribute name="coreentid" label="核心企业编号" type="STRING" length="32"/>
+			<attribute name="lowerentid" label="下游企业编号" type="STRING" length="32"/>
+			<attribute name="status" label="状态" type="STRING" length="8"/>
+			<!-- 启用、停用 -->
+			<attribute name="startdate" label="开始日期" type="STRING" length="20"/>
+			<attribute name="enddate" label="结束日期" type="STRING" length="20"/>
+			<attribute name="precreditsum" label="建议授信额度" type="STRING" length="20"/>
+			<attribute name="inputuser" label="录入人" type="STRING" length="32"/>
+			<attribute name="inputtime" label="录入时间" type="STRING" length="20"/>
+			<attribute name="updateuser" label="更新人" type="STRING" length="32"/>
+			<attribute name="updatetime" label="更新时间" type="STRING" length="20"/>
+		</attributes>
+		<manager>
+			<managerProperties>
+				<property name="table" value="white_list" type="STRING"/>
+				<property name="createKey" value="true" type="STRING"/>
+			</managerProperties>
+		</manager>
+	</class>
+	<class name="ent_credit" label="授信额度" keyAttributes="creditno">
+		<attributes>
+			<attribute name="creditno" label="编号" type="STRING" length="32"/>
+			<attribute name="coreentid" label="核心企业编号" type="STRING" length="32"/>
+			<attribute name="lowerentid" label="下游企业编号" type="STRING" length="32"/>
+			<attribute name="status" label="状态" type="STRING" length="8"/>
+			<!-- 启用、停用 -->
+			<attribute name="startdate" label="开始日期" type="STRING" length="20"/>
+			<attribute name="enddate" label="结束日期" type="STRING" length="20"/>
+			<attribute name="extendterm" label="延长日期" type="STRING" length="20"/>
+			<attribute name="creditsum" label="授信额度" type="STRING" length="20"/>
+			<attribute name="loantype" label="适用类型" type="STRING" length="20"/>
+			<attribute name="inputuser" label="录入人" type="STRING" length="32"/>
+			<attribute name="inputtime" label="录入时间" type="STRING" length="20"/>
+			<attribute name="updateuser" label="更新人" type="STRING" length="32"/>
+			<attribute name="updatetime" label="更新时间" type="STRING" length="20"/>
+		</attributes>
+		<manager>
+			<managerProperties>
+				<property name="table" value="ent_credit" type="STRING"/>
+				<property name="createKey" value="true" type="STRING"/>
+			</managerProperties>
+		</manager>
+	</class>
+	<class name="draw_money_apply" label="提款申请" keyAttributes="applyno">
+		<attributes>
+			<attribute name="applyno" label="申请编号" type="STRING" length="32"/>
+			<attribute name="coreentid" label="核心企业编号" type="STRING" length="32"/>
+			<attribute name="lowerentid" label="下游企业编号" type="STRING" length="32"/>
+			<attribute name="status" label="状态" type="STRING" length="8"/>
+			<attribute name="contractid" label="合同编号" type="STRING" length="32"/>
+			<attribute name="contractsum" label="合同金额" type="STRING" length="20"/>
+			<attribute name="firstpaysum" label="首付款金额" type="STRING" length="20"/>
+			<attribute name="loantype" label="贷款类型" type="STRING" length="20"/>
+			<attribute name="loansum" label="贷款金额" type="STRING" length="20"/>
+			<attribute name="loanterm" label="贷款期限" type="STRING" length="20"/>
+			<attribute name="plantime" label="计划还款日期" type="STRING" length="20"/>
+			<attribute name="plantime" label="计划还款日期" type="STRING" length="20"/>
+			<attribute name="objecttype" label="贷款品种" type="STRING" length="32"/>
+			<attribute name="paytype" label="还款方式" type="STRING" length="32"/>
+			<attribute name="docid" label="附件编号" type="STRING" length="32"/>
+			<attribute name="inputuser" label="录入人" type="STRING" length="32"/>
+			<attribute name="inputtime" label="录入时间" type="STRING" length="20"/>
+			<attribute name="updateuser" label="更新人" type="STRING" length="32"/>
+			<attribute name="updatetime" label="更新时间" type="STRING" length="20"/>
+		</attributes>
+		<manager>
+			<managerProperties>
+				<property name="table" value="draw_money_apply" type="STRING"/>
+				<property name="createKey" value="true" type="STRING"/>
+			</managerProperties>
+		</manager>
+	</class>
+</jbo>

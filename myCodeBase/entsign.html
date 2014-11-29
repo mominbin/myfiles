@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=divice-width,initial-sacle=1.0">
+	<title>check the enterprise identify</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+	<!--[if it IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	head>
+	<! [endif] -->
+</head>
+<body>
+	<div class="container">
+		<h1 class="page-header">核心企业注册</h1>
+		<form action="http://localhost:8080/tj_supply/account/coreEntback.jsp" name="form1" method ="post">
+			<div class="input-group" style="width:300px">
+				<span class="input-group-addon">result</span>
+				<input type="text" class="form-control" name="result" value="" size="20"/>
+			</div>
+			<div class="input-group" style="width:300px">
+				<span class="input-group-addon">transdate</span>
+				<input type="text" class="form-control" name="transdate" value="" size="20"/>
+			</div>
+			<div class="input-group" style="width:300px">
+				<span class="input-group-addon">transtime</span>
+				<input type="text" class="form-control" name="transtime" value="" size="20"/>
+			</div>
+			<div class="input-group" style="width:300px">
+				<span class="input-group-addon">userid</span>
+				<input type="text" class="form-control" name="userid" value="" size="20"/>
+			</div>
+			<div class="input-group" style="width:300px">
+				<span class="input-group-addon">entid</span>
+				<input type="text" class="form-control" name="entid" value="" size="20"/>
+			</div>
+			<div class="input-group" style="width:300px">
+				<span class="input-group-addon" style="width:95px">username</span>
+				<input type="text" class="form-control" name="username" value="" size="20"/>
+			</div>
+			<!-- <div class="input-group" style="width:300px">
+				<span class="input-group-addon">signmsg</span>
+				<input type="text" class="form-control" name="signmsg" value="" size="20"/>
+			</div> -->
+			<input type="submit" class="btn-primary" value="核心企业注册"  />
+		</form>
+	</div>
+	<div class="container">
+		<h1 class="page-header">下游企业注册</h1>
+
+		<form action="http://localhost:8080/tj_supply/account/lowerEntback.jsp" class="bs-example bs-example-form" role='form'>
+			<div class="input-group" style="width:300px">
+				<span class="input-group-addon">result</span>
+				<input type="text" class="form-control" name="result" value="" size="20"/>
+			</div>
+			<div class="input-group" style="width:300px">
+				<span class="input-group-addon">transdate</span>
+				<input type="text" class="form-control" name="transdate" value="" size="20"/>
+			</div>
+			<div class="input-group" style="width:300px">
+				<span class="input-group-addon">transtime</span>
+				<input type="text" class="form-control" name="transtime" value="" size="20"/>
+			</div>
+			<div class="input-group" style="width:300px">
+				<span class="input-group-addon">userid</span>
+				<input type="text" class="form-control" name="userid" value="" size="20"/>
+			</div>
+			<div class="input-group" style="width:300px">
+				<span class="input-group-addon">entid</span>
+				<input type="text" class="form-control" name="entid" value="" size="20"/>
+			</div>
+
+			<div class="input-group" style="width:300px">
+				<span class="input-group-addon" style="width:95px">username</span>
+				<input type="text" class="form-control" name="username" value="" size="20"/>
+			</div>
+			<input type="submit" class="btn-primary" value="下游企业注册" />
+		</form>
+	</div>
+</body>
+	<script src="bootstrap/js/jquery-1.9.1.min.js"></script>
+	<script src="bootstrap/js/bootstrap.js"></script>
+
+</html>

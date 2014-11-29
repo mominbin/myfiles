@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=divice-width,initial-sacle=1.0">
+	<title>check the enterprise identify</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+	<!--[if it IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	head>
+	<! [endif] -->
+</head>
+<body>
+	<div class="container">
+		<h1 class="page-header">lower enterprise register</h1>
+		<form action="http://localhost:8080/tj_supply/account/chkLowerEnt.jsp" name="form1">
+			<div class="input-group" style="width:300px">
+			<input type="text" class="form-control" name="entname" value="" size="20"/><span class="input-group-addon">白名单企业名</span>
+			</div>
+			<div class="input-group" style="width:300px">
+			<input type="text" class="form-control" name="orgcode" value="" size="20"/><span class="input-group-addon" style="width:95px">白名单企业组织机构代码</span>
+			</div>
+			<div class="input-group" style="width:300px">
+			<input type="text" class="form-control" name="checkcode" value="" size="20"/><span class="input-group-addon">邀请码</span>
+			</div>
+			<div class="input-group" style="width:300px">
+			<input type="text" class="form-control" name="username" value="" size="20"/><span class="input-group-addon" style="width:95px">用户名</span>
+			</div>
+			<input type="submit" class="btn-primary" value="submit"  />
+			</form>
+	</div>
+	<div class="container">
+		<h1 class="page-header">core enterprise register</h1>
+		
+		<form action="http://localhost:8080/tj_supply/account/chkCoreEnt.jsp" class="bs-example bs-example-form" role='form'>
+			<div class="input-group input-group-xs" style="width:300px">
+			<input type="text" class="form-control" name="entname" value="" size="20"/><span class="input-group-addon">核心企业名</span>
+			</div>
+			<div class="input-group input-group-sm" style="width:300px">
+			<input type="text" class="form-control" name="orgcode" value="" size="20"/><span class="input-group-addon">核心企业组织机构代码</span>
+			</div>
+			<div class="input-group" style="width:300px">
+			<input type="text" class="form-control" name="checkcode" value="" size="20"/><span class="input-group-addon">校验码</span>
+			</div>
+			<div class="input-group" style="width:300px">
+			<input type="text" class="form-control" name="username" value="" size="20"/><span class="input-group-addon">用户名</span>
+			</div>
+			<input type="submit" class="btn-primary" value="submit" />
+			</form>
+	</div>
+</body>
+<script src="bootstrap/js/jquery-1.9.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+
+</html>

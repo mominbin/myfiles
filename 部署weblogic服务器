@@ -1,0 +1,18 @@
+使用准备好tar文件，放在没有中文名的目录下
+使用sftp root@ip
+:password
+登录
+
+此处结合具体案例，项目的根目录是/gyl
+cd 到/gyl 
+lcd tar文件所在的地方
+put *.tar		//将*.tar文件放在服务器的当前目录下
+
+
+然后使用ssh root@IP
+：password 
+登录到服务器里，使用 tar -xvf xxx.tar
+
+在浏览器里使用 14.1.78.126：7001/console
+登录weblogic
+部署，先停止部署的两个项目，然后在启动。在weblogic里的lib中有一个jar包需要删除，webservice_rt.jar。

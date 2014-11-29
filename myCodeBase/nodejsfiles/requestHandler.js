@@ -1,17 +1,57 @@
 var exec=require('child_process').exec;
+var querystring=require("querystring");
+var formidable=require("formidable");
+var fs=require("fs");
 function start(response){
 	console.log("Request handler 'start' was called.");
-	exec('ls -ash',function(error,stdout,stderr){
-		response.writeHead(200, {"Content-Type": "text/plain"});
-		response.write(stdout);
+	var body = '<html>'+
+	'<head>'+
+	'<meta http-equiv="Content-Type" '+
+	'content="text/html; charset=UTF-8" />'+
+	'</head>'+
+	'<body>'+
+	'<form action="/upload" enctype="multipart/form-data" '+
+	'method="post">'+
+	'<input type="file" name="upload">'+
+	'<input type="submit" value="Upload file" />'+
+	'</form>'+
+	'</body>'+
+	'</html>';
+	response.writeHead(200, {"Content-Type": "text/html"});
+	response.write(body);
+	response.end();
+	
+}
+function upload(response,request){
+	console.log("Request handler 'upload' was called.");
+
+	var form=new formidable.IncomingForm();
+	console.log("about to parse");
+	var uPath='/home/mbmo/gitrepositories/myfiles/myCodeBase/nodejsfiles/tmp/';
+	form.parse(request,function(error,fields,files){
+		console.log("parsing done");
+		fs.renameSync(files.upload.path, uPath+"test.jpeg");
+		response.writeHead(200,{"Content-Type":"text/html"});
+		response.write("received image:<br/>");
+		response.write("<img src='/show' />");
 		response.end();
 	});
 }
-function upload(response){
-	console.log("Request handler 'upload' was called.");
-	response.writeHead(200, {"Content-Type": "text/plain"});
-	response.write('hello upload!');
-	response.end();
+
+function show(response){
+	console.log("Request handler 'show' was called.");
+	fs.readFile("tmp/test.jpeg","binary",function(error,file){
+		if(error){
+			response.writeHead(500,{"Content-Type":"text/plain"});
+			response.write(error+"\n");
+			response.end();
+		}else{
+			response.writeHead(200,{"Content-Type":"image/jpeg"});
+			response.write(file,"binary");
+			response.end();
+		}
+	});
 }
 exports.start=start;
 exports.upload=upload;
+exports.show=show;

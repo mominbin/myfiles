@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=divice-width,initial-sacle=1.0">
+	<title>user logon</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+	<!--[if it IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	head>
+	<! [endif] -->
+</head>
+<body>
+	<div class="container">
+		<h1 class="page-header">user logon on</h1>
+		<form action="http://localhost:8080/tj_supply/account/bindEntType.jsp" name="form1" method="post">
+			<div class="input-group" style="width:300px">
+			<span class="input-group-addon">userid</span><input type="text" class="form-control" name="userid" value="" />
+			</div>
+			<div class="input-group" style="width:300px">
+			<span class="input-group-addon" style="width:95px">username</span><input type="text" class="form-control" name="username" value="" />
+			</div>
+			<div class="input-group" style="width:300px">
+			<span class="input-group-addon" style="width:95px">result</span><input type="text" class="form-control" name="result" value="0000" />
+			</div>
+			<div class="input-group" style="width:300px">
+			<span class="input-group-addon" style="width:95px">transdate</span><input type="text" class="form-control" name="transdate" value="1111" />
+			</div>
+			<div class="input-group" style="width:300px">
+			<span class="input-group-addon" style="width:95px">transtime</span><input type="text" class="form-control" name="transtime" value="1111" />
+			</div>
+			<div class="input-group" style="width:300px">
+			<span class="input-group-addon" style="width:95px">signmsg</span><input type="text" class="form-control" name="signmsg" value="520F5E3CF31DC2C5EAEAD06E2825AF63" />
+			</div>
+
+			<input type="submit" class="btn-primary" value="submit"  onclick="getresponse()" />
+			</form>
+	</div>
+	
+</body>
+<script src="bootstrap/js/jquery-1.9.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+
+</html>

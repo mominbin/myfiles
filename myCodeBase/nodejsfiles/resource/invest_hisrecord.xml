@@ -1,0 +1,16 @@
+<jbo>
+	<class name="invest_hisrecord" label="投资流水信息" keyAttributes="serialno">
+		<attributes>
+			<attribute name="serialno" label="流水" type="STRING" length="32"/>
+			<attribute name="userid" label="用户编号" type="STRING" length="32"/>
+			<attribute name="projectid" label="项目编号" type="STRING" length="32"/>
+			<attribute name="inputtime" label="录入时间" type="STRING" length="20"/>
+		</attributes>
+		<manager>
+			<managerProperties>
+				<property name="table" value="invest_hisrecord" type="STRING"/>
+				<property name="createKey" value="true" type="STRING"/>
+			</managerProperties>
+		</manager>
+	</class>
+</jbo>
