@@ -1,1 +1,0 @@
-如果没有在元素内部的style属性没有相应的width和height那么使用element.style.width,element.style.height是无法获取到值的,需要使用element.offsetWidth,element.offsetHeight。相应的高宽都是一样的。

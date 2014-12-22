@@ -1,5 +1,0 @@
-git remote add aliasname git@github.com:mominbin/myfiles.git(your remote respository)
-cd yourdirectory 
-git add youfile
-git commit -m "remark"
-git push aliasname master
