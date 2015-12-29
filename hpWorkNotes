@@ -1,0 +1,222 @@
+build ServerManager Runtime 
+setup sqlServer --> confingure ODBC --> setup ServerManager Server --> setup ServerManager client
+																	|-->setup ServerManager webtier
+
+
+the sm running at the localhost ,need to change the configure of web.xml
+preferences needing to change inclued :
+	serverHost
+	serverPort
+	jsDebug:js 是否使用调试模式，true的时候可以js都是非压缩传送到前端的。
+	secureLogin
+
+
+
+Ramp up plan
+1.	Set up laptop, know the working environment 
+            Please fill in the  “Which One I Am” in DirectoryWorks with the format below:
+
+                        EnglishName, SM CPE Dev 
+       eg: Simonton, SM CPE Dev
+
+2.	Install SM and run SM RR Test (Windows Client and Web Client) 
+You can get SM 940GA package from \\16.186.72.8\Software\HP_Software\ServiceManager\9.4x_Releases\9.40\9.40_GA
+            SM Online Help: http://helpserver.chn.hp.com/
+            RR Test doc: See attached “Release Readiness.doc”            
+  
+3.	 Set up development env. 
+ 
+4.	Client architecture and video 
+\\hpswsus-fs\SEL\SMCFRD\Knowledge\TechnicalSession\Servcie Manager Client Dev Training_dingjun_20090612
+\\hpswsus-fs\SEL\SMCFRD\Knowledge\TechnicalSession\Service manager client training - CWC
+
+5.	Process Oritentation (QC, Wiki)
+
+
+6. how to start server:
+
+goto the path you install the ServerManager like :C:\Program Files (x86)\HP\Service Manager 9.40\Server\RUN
+run the sm.exe !
+
+7. how to run the RR test
+	start the server preference to step 6.
+	put the .war file into the tomcat webapps folder.
+	start the apache-tomcat %root%/bin/startup.bat.
+	input localhost:8080/%projectNmae%(like 'webtier-9.40') to your brower url field.
+	use user "falcon" to login 
+8.跑rr的时候有一些菜单不一样的话，可能是版本的问题，使用之前的版本：http://16.186.77.25:8080/sm934/index.do 
+
+9.ALM: application lifecycle managerment,分发任务，可以从这里面查看，有ER=Enhancement Record和CR= change record ，即开发功能和变更功能。
+登录url：http://qc2f.austin.hp.com/qcbin/start_a.jsp（必须使用IE登录）
+	我的登录用户名和密码：userName：min-bin.mo
+				pwd:kit****60
+
+
+10.create local develope environment steps
+/**	
+	svn 命令行的svn
+
+	sm webtier 有很多版本，7.1x 9.3x中，在rpjectmain中开发  9.4xmian（进行开发）使用maven使用3版本，其他的都是使用2版本的。
+
+
+	应用层是在 application 
+
+	前端组在client上。9.4xmain child folder has a parent folder
+
+
+	maven 安装3.1.1和2.1.1版本。
+
+
+	reviewboard 让同事review代码。
+	hp是双人开发模式，dev 和 qa 两个人，Awaiting Decision 分发项目。 
+
+	使用merge名利那个合并到其他clone的版本上。
+
+	regression 代码变更引起的新bug
+	post-release regression (要控制在5%以内)
+
+	找到rootcause
+
+	cr  clone-> planned ->p
+
+	deferred 是一个不需要修改的bug 
+**/
+
+	使用svn拉取项目
+
+	-->mvn 编译(mvn clean install ,必要的时候使用mvn clean install -Dmaven.test.skip=true, 如果电脑系统被调成了中文所在地，SM Eclipse Client User plugin 在编译的时候可能会有问题，solution：在environment里配置JAVA_TOOL_OPTIONS = -Dfile.encoding=CP1252，在编译telephony的时候需要将pom.xml中id为sign-installer-media的execution注释掉。）
+
+	-->使用eclipse搭建debug项目，新建 Dynamic Web Project 将文件夹WebContent删掉，新建一个同名文件夹，在wizard框中，选择Advanced 选择 Link to alternate location(Lined folder). 然后将此文件夹连接到 C:\Users\momi\workspace\client\webtier\build\webtier-build 这个文件夹上，根据自己的 workspace 的不同调整。在server中添加这个项目，并导入在开发中可能要用到的源码文件，Import...-->Existing Projects into Workspace-->选择 Select root directory , 输入C:\Users\momi\workspace\client 然后在 Projects 中选择开发中可能会用到的文件。然后finish
+
+11.使用Maven 编译项目，使用的命令 
+	mvn clean  
+	mvn clean install 
+	mvn clean install -Dmaven.test.skip=true
+
+
+12.查看server rte和applications的版本号
+	在命令行里输入db -->table字段中输入scservion,scvertion是server center version的意思 --》点击search 就可以看到
+	在webtier端，点击hplogo就可以看到版本号了。
+
+13.查看设计结构。
+	命令行里输入fd
+
+14.升级server RTE 和 application 的版本。
+	1.升级server RTE 的本版
+		安装好大版本的 server端，查看webtier端的版本号，在\\orot\Software\HP_Software\ServiceManager 中找到，相应的 application和webtier的zip包 
+		解压smxxxwebtier.zip  ，此目录为目录A ，原server安装目录为目录B
+		删除B目录中除了RUN目录外的 与A目录相同的目录，再将A目录里除了RUN目录外的所有文件复制进B目录中
+		删除B目录的RUN里所有与A的RUN目录里同名的目录，再将A目录里RUN中所有的内容复制到B目录的RUN目录中。
+
+	2.升级application 版本
+		进入windowsclient System Navigator-->System Administraction-->Ongoing Maintenance-->Patch Release-->Apply Patch Release 在显示的字段中输入解压出来的application的unl文件。next
+		进入windows client command line --> db --> 右上角点，点Import/load --> 在File Name 字段添加server安装根目录下的platform_unloads目录，找到oob版本到当前版本的unl文件-->Load FG
+
+15.post-review 的使用
+	
+	svn propset reviewboard:url http://reviewboard.chn.hp.com/reviews .			将当前文件夹设置为post-review的目标文件夹
+
+	svn changelist(cl) 															设置变更列表文件
+
+	svn cl 123 pom.xml 															cl 	文件列表名称 要添加到变更列表的文件
+
+	svn st(status)																列出svn变更信息
+
+	svn diff 																	列出文件变更
+
+	post-review -d --svn-changelist changelistName 								生成post-review的连接
+
+	post-review -d --svn-changelist changelistName -r id 						有相同的id时，只用这条命令 -d 是把debug信息也打印出来
+		example：post-review -d --svn-changelist 96222 -r 2992
+
+16.在控制台中输出soap信息
+	配置主项目的web-inf文件夹下的log4j.properties文件，将log4j.appender.stdout=org.apache.log4j.ConsoleAppender前的注释去掉，在log4j.rootLogger=info,R后添加“，stdout”，在log4j.logger.TraceSoap=DEBUG, R后添加“，stdout”
+
+
+
+12月12日 taining
+
+spring 权限管理/依赖注入  配置文件 application-context.xml 做了一些配置
+
+LWSSO low weight single sign on 单点登录：
+
+Authenfication integration :权限整合，
+
+Diagram Viewer :流程示意图，显示流程示意图的技术
+
+workflow：流程控制
+
+DDE Telephony：dde windows端的通讯协议，允许两个程序通过它来通讯，过时了，可以放弃
+
+CI component iterm 流程节点。
+
+CWC：common web component 和extjs里面的布局，他们的实现。
+
+mononoko
+record list	是同一个东西
+
+instrument 用来做调试时候的配置。可以方便调试
+
+mobile 不太维护了，有mobility
+
+webtier
+
+
+webcontroller debug 看一遍流程。 
+
+smc :sm correperation.
+
+
+	解决缓存问题的 js文件夹下面的有一个。
+
+TODO 调试登录时的form函数
+
+
+
+17.请求到返回的分析
+
+
+	debug 方法 xml是使用jmod 包来解析的，可以使用
+
+	new XMLOutputter(Format.getPrettyFormat()).outputString(root)
+
+	方法返回解析的内容
+
+	a.获取请求参数的位置：  WebController.java 1639行 final Document execution = processWebRequest(request, response); 
+		execution举例：
+			<?xml version="1.0" encoding="UTF-8"?>
+				<_doc>
+				  <threads>
+				    <thread title="Change C10028 - Prompt" transaction="4" form="chm.standard.pir" formid="chm.standard.pir126cm3r00" list="cm3r.qbe.g" listid="cm3r.qbe.g19591cm3r00" record="17" type="listdetail" focus="instance/header/assigned.to">1</thread>
+				  </threads>
+				</_doc>
+
+	WebController.java 2244行获取formId =activeThread.getElement().getAttributeValue(PARAM_ThreadFormID)；
+
+
+	WebController.java 1515 Message msgModel = new Message(XMLUtil.JDOMtoW3C(new Document(model))); 包含了返回的信息
+
+
+
+18.QCCR1E117680  重现步骤中的 Make sure you have a display option to test multi-select:
+
+	在windows client 端左边的导航中，好到tailoring --》Display Option中添加规则。
+
+19.备份数据库的时候在Microsoft SQL 中，右键需要备份的数据库，点击....
+
+20.QCCR1E117680查找到了xsl的位置，对应input标签的位置，table.xsl 569行 <xsl:when test="@originalId and not(@originalId='')">
+
+	chen.dong-lin  12/24/2013 1:50:03 PM
+	QCCR1E102120/QCCR1E102159 It return to the incorrect tab after removing Service SLA from Manage Catalog
+
+21.任务：将某版本的代码的merge到新版本上。
+	如果是clone过来的代码，需要在ALM上找到此CR的parent， 
+
+	将此CR上更改的文件的相应的文件夹merge到本地，然后再发一个review ，通过之后，提交代码，更新ALM信息。
+
+22.在idea中运行项目
+	添加应用服务容器：菜单run--》edit configuration 点击 “+” 号，添加tomcat 选择Deployment “+” 
+	创建部署文件，File --> Project Structure --> Artifacts --> "+" --> Web application :exploded empty --> 右边 OutputLayout -->"+" --> directory content -->编译好的maven项目中的build 文件夹 (如client\webtier\build\webtier-build) -->如果想要实时得到修改的结果，需要配置，-->在Web application 下新建文件夹，WEB-INF 然后再新建文件夹classes --> 右键classes 文件夹add copy of --> Module Output 添加文件后，在右下角有fix ，点击fix...
+	添加后直接运行 tomcat 如果有报错，没有相应的包 找到File-->Project Structure 找到缺少文件的module （即项目）点击添加module dependences 
+	有可能没有json方法的问题，更换jdk到jdk1.6
+	由于eclipse不怎么用，可以在client目录下的modules配置模块下，将相应的配置文件注释掉。
