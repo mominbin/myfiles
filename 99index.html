@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div><input id ="initData" type="text" width="800px;"><input type="button" value="initData" onclick="initArrary(this)"></div>
+<div><input type="button" value="showPossibleValues" onclick="getResult()"></div>
+	<table class="sd" border="0" align="center" cellspacing="1" cellpadding="1">
+<tbody><tr>
+<td class="xx"><input id="s1" name="s1" class="fix" ></td>
+<td class="xx"><input id="s2" name="s2" class="fix" ></td>
+<td class="rr"><input id="s3" name="s3" class="fix" ></td>
+<td class="xx"><input id="s4" name="s4" class="fix" ></td>
+<td class="xx"><input id="s5" name="s5" class="fix" ></td>
+<td class="rr"><input id="s6" name="s6" class="fix" ></td>
+<td class="xx"><input id="s7" name="s7" class="fix" ></td>
+<td class="xx"><input id="s8" name="s8" class="fix" ></td>
+<td class="rr"><input id="s9" name="s9" class="fix" ></td>
+</tr>
+<tr>
+<td class="xx"><input id="s10" name="s10" class="fix" ></td>
+<td class="xx"><input id="s11" name="s11" class="fix" ></td>
+<td class="rr"><input id="s12" name="s12" class="fix" ></td>
+<td class="xx"><input id="s13" name="s13" class="fix" ></td>
+<td class="xx"><input id="s14" name="s14" class="fix" ></td>
+<td class="rr"><input id="s15" name="s15" class="fix" ></td>
+<td class="xx"><input id="s16" name="s16" class="fix" ></td>
+<td class="xx"><input id="s17" name="s17" class="fix" ></td>
+<td class="rr"><input id="s18" name="s18" class="fix" ></td>
+</tr>
+<tr>
+<td class="bb"><input id="s19" name="s19" class="fix" ></td>
+<td class="bb"><input id="s20" name="s20" class="fix" ></td>
+<td class="br"><input id="s21" name="s21" class="fix" ></td>
+<td class="bb"><input id="s22" name="s22" class="fix" ></td>
+<td class="bb"><input id="s23" name="s23" class="fix" ></td>
+<td class="br"><input id="s24" name="s24" class="fix" ></td>
+<td class="bb"><input id="s25" name="s25" class="fix" ></td>
+<td class="bb"><input id="s26" name="s26" class="fix" ></td>
+<td class="br"><input id="s27" name="s27" class="fix" ></td>
+</tr>
+<tr>
+<td class="xx"><input id="s28" name="s28" class="fix" ></td>
+<td class="xx"><input id="s29" name="s29" class="fix" ></td>
+<td class="rr"><input id="s30" name="s30" class="fix" ></td>
+<td class="xx"><input id="s31" name="s31" class="fix" ></td>
+<td class="xx"><input id="s32" name="s32" class="fix" ></td>
+<td class="rr"><input id="s33" name="s33" class="fix" ></td>
+<td class="xx"><input id="s34" name="s34" class="fix" ></td>
+<td class="xx"><input id="s35" name="s35" class="fix" ></td>
+<td class="xx"><input id="s36" name="s36" class="fix" ></td>
+</tr>
+<tr>
+<td class="xx"><input id="s37" name="s37" class="fix" ></td>
+<td class="xx"><input id="s38" name="s38" class="fix" ></td>
+<td class="rr"><input id="s39" name="s39" class="fix" ></td>
+<td class="xx"><input id="s40" name="s40" class="fix" ></td>
+<td class="xx"><input id="s41" name="s41" class="fix" ></td>
+<td class="rr"><input id="s42" name="s42" class="fix" ></td>
+<td class="xx"><input id="s43" name="s43" class="fix" ></td>
+<td class="xx"><input id="s44" name="s44" class="fix" ></td>
+<td class="xx"><input id="s45" name="s45" class="fix" ></td>
+</tr>
+<tr>
+<td class="bb"><input id="s46" name="a46" class="fix" ></td>
+<td class="bb"><input id="s47" name="s47" class="fix" ></td>
+<td class="br"><input id="s48" name="s48" class="fix" ></td>
+<td class="bb"><input id="s49" name="s49" class="fix" ></td>
+<td class="bb"><input id="s50" name="s50" class="fix" ></td>
+<td class="br"><input id="s51" name="s51" class="fix" ></td>
+<td class="bb"><input id="s52" name="s52" class="fix" ></td>
+<td class="bb"><input id="s53" name="s53" class="fix" ></td>
+<td class="br"><input id="s54" name="s54" class="fix" ></td>
+</tr>
+<tr>
+<td class="xx"><input id="s55" name="s55" class="fix" ></td>
+<td class="xx"><input id="s56" name="s56" class="fix" ></td>
+<td class="rr"><input id="s57" name="s57" class="fix" ></td>
+<td class="xx"><input id="s58" name="s58" class="fix" ></td>
+<td class="xx"><input id="s59" name="s59" class="fix" ></td>
+<td class="rr"><input id="s60" name="s60" class="fix" ></td>
+<td class="xx"><input id="s61" name="s61" class="fix" ></td>
+<td class="xx"><input id="s62" name="s62" class="fix" ></td>
+<td class="xx"><input id="s63" name="s63" class="fix" ></td>
+</tr>
+<tr>
+<td class="xx"><input id="s64" name="s64" class="fix" ></td>
+<td class="xx"><input id="s65" name="s65" class="fix" ></td>
+<td class="rr"><input id="s66" name="s66" class="fix" ></td>
+<td class="xx"><input id="s67" name="s67" class="fix" ></td>
+<td class="xx"><input id="s68" name="s68" class="fix" ></td>
+<td class="rr"><input id="s69" name="s69" class="fix" ></td>
+<td class="xx"><input id="s70" name="s70" class="fix" ></td>
+<td class="xx"><input id="s71" name="s71" class="fix" ></td>
+<td class="xx"><input id="s72" name="s72" class="fix" ></td>
+</tr>
+<tr>
+<td class="xx"><input id="s73" name="s73" class="fix" ></td>
+<td class="xx"><input id="s74" name="s74" class="fix" ></td>
+<td class="rr"><input id="s75" name="s75" class="fix" ></td>
+<td class="xx"><input id="s76" name="s76" class="fix" ></td>
+<td class="xx"><input id="s77" name="s77" class="fix" ></td>
+<td class="rr"><input id="s78" name="s78" class="fix" ></td>
+<td class="xx"><input id="s79" name="s79" class="fix" ></td>
+<td class="xx"><input id="s80" name="s80" class="fix" ></td>
+<td class="rr"><input id="s81" name="s81" class="fix" ></td>
+</tr>
+
+</tbody></table>
+</body>
+<style>
+td.br {
+    border-right: #443 2px solid;
+    border-top: #999 1px solid;
+    border-bottom: #443 2px solid;
+
+    text-align: center;
+    LINE-height: 30px;
+}
+td.bb {
+    border-right: #999 1px solid;
+    border-top: #999 1px solid;
+    border-bottom: #443 2px solid;
+
+    text-align: center;
+    LINE-height: 30px;
+}
+
+	.big {
+	    FONT-SIZE: 18px;
+	    border: none;
+	    background-color: transparent;
+	    WIDTH: 100px;
+	    HEIGHT: 30px;
+	    LINE-HEIGHT: 300px;
+	    TEXT-ALIGN: center;
+	    margin: 0px;
+	    COLOR: red;
+	    FONT-FAMILY: Verdana;
+	}
+	.fix {
+	    FONT-SIZE: 25px;
+	    border: none;
+	    background-color: transparent;
+	    WIDTH: 30px;
+	    HEIGHT: 30px;
+	    LINE-HEIGHT: 28px;
+	    TEXT-ALIGN: center;
+	    margin: 0px;
+	    COLOR: #000000;
+	    FONT-FAMILY: Verdana;
+	}
+	input:not([type]), input[type="email" i], input[type="number" i], input[type="password" i], input[type="tel" i], input[type="url" i], input[type="text" i] {
+    	padding: 1px 0px;
+	}
+	td.xx {
+    border-right: #999 1px solid;
+    border-top: #999 1px solid;
+
+    text-align: center;
+    LINE-height: 30px;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.sd {
+    table-layout: fixed;
+    border: #443 3px solid;
+    width: 355px;
+    height: 355px;
+    background-color: #fff;
+    vertical-align: middle;
+    border-collapse: collapse;
+    text-align: center;
+}
+td.rr {
+    border-right: #443 2px solid;
+    border-top: #999 1px solid;
+
+    text-align: center;
+    LINE-height: 30px;
+}
+td{
+	    width: 100px;
+    height: 100px;
+}
+</style>
+<script>
+
+	function getInitArray(){
+		var inputList = document.getElementsByClassName("sd")[0].getElementsByTagName("input");
+		var arrList = new Array();
+		for (var i= 0,len = inputList.length;i<len;i++){
+			arrList.push(inputList[i].value);
+		}
+		console.log(arrList.toString());
+		var arr = new Array(9);
+		var col = 0;
+		var row = -1;
+		for (var len = arrList.length, i = 0; i < len; i++) {
+			col = i % 9;
+			if (col == 0){
+				row ++;
+				arr[row] =  new Array();
+			}
+			if (arrList[i] == ""  || arrList[i].indexOf(",") != -1){
+				arr[row][col] = -1;
+			} else {
+				arr[row][col] = parseInt(arrList[i]);
+			}
+			
+		}
+		return arr;
+	}
+
+	function initArrary(target){
+		//["", "", "", "", "7", "3", "", "", "", "", "", "8", "", "", "", "", "", "2", "2", "5", "", "", "", "", "", "7", "", "", "4", "", "", "", "", "", "", "5", "", "", "", "", "", "2", "9", "", "4", "1", "", "5", "", "", "6", "", "", "", "", "9", "", "", "3", "", "", "", "8", "4", "", "", "", "", "5", "", "", "", "", "", "", "", "1", "", "3", "", "9"]
+		var initData = target.previousElementSibling.value;
+		initData = initData.split(',');
+		var inputList = document.getElementsByClassName("sd")[0].getElementsByTagName("input");
+		for (var i = inputList.length - 1; i >= 0; i--) {
+			inputList[i].value = initData[i];
+			if (inputList[i].value == "" || inputList[i].value.indexOf(",")>-1){
+				inputList[i].setAttribute("class","big");
+			}
+		}
+	}
+
+	function setClass(){
+		var inputList = document.getElementsByClassName("sd")[0].getElementsByTagName("input");
+		for (var i = inputList.length - 1; i >= 0; i--) {
+			if (inputList[i].value == "" || inputList[i].value.indexOf(",")>-1){
+				inputList[i].setAttribute("class","big");
+			}
+		}
+	}
+
+	function getResult(){
+		window.arr99Glo = getInitArray();
+		window.arr33ListGlo = initArray33(arr99Glo);
+		console.log(arr33ListGlo);
+		setPossibleValues();
+		setClass();
+		// get capable values of every unknown element
+
+	}
+
+	function setPossibleValues(){
+		var arr99 = window.arr99Glo;
+		var inputList = document.getElementsByClassName("sd")[0].getElementsByTagName("input");
+		for(var i = 0, rowLen = arr99.length; i < rowLen; i++){
+			for(var j = 0, colLen = arr99[i].length; j < colLen; j++) {
+				var item = arr99[i][j];
+				if (item == -1){
+					var pv = possibleValues(i,j);
+					inputList[i*9 + j].value = pv.toString();
+				}
+			}
+		}
+	}
+
+	function possibleValues(row, col){
+		var colArr = getColArrayExist(row);
+		var rowArr = getRowArrayExist(col);
+		var arr33 = get33ArrayExist(row, col);
+		return differenceSet([1,2,3,4,5,6,7,8,9], unionSet(colArr,rowArr,arr33));
+
+
+	}
+
+	function getColArrayExist(row){
+		var colArr = new Array();
+		for (var i = window.arr99Glo[row].length - 1; i >= 0; i--) {
+			var item = window.arr99Glo[row][i];
+			if (item != -1) {
+				colArr.push(item);
+			}
+		}
+		return colArr;
+	}
+
+	function getRowArrayExist(col){
+		var rowArr = new Array();
+		for (var i = 8; i >= 0; i--) {
+			var item = window.arr99Glo[i][col];
+			if (item != -1) {
+				rowArr.push(item);
+			}
+		}
+		return rowArr;
+	}
+
+	function get33ArrayExist(row, col){
+		var arr33Temp = new Array();
+		var arr33 = window.arr33ListGlo[getIndexOfarr33List(row, col)];
+		for (var i = arr33.length - 1; i >= 0; i--) {
+			var colLen = arr33[i].length;
+			for (var j = colLen- 1; j >= 0; j--) {
+				var item = arr33[i][j];
+				if (item != -1) {
+					arr33Temp.push(item);
+				}
+			}
+		}
+		return arr33Temp;
+	}
+
+	function differenceSet(A, B){
+		A = A.sort();
+		B = B.sort();
+		var differenceSet = new Array();
+		for (var i = 0; i <  A.length; i++) {
+			if(!B.includes(A[i])){
+				differenceSet.push(A[i]);
+			}
+		}
+		return differenceSet;
+	}
+
+	function unionSet(A,B,C){
+		return dedup(A.concat(B,C));
+	}
+
+	function dedup(arr){
+		var hash=[];
+		for (var i = 0; i < arr.length; i++) {
+		    for (var j = i+1; j < arr.length; j++) {
+		        if(arr[i]===arr[j]){
+		        ++i;
+		      }
+		    }
+	    hash.push(arr[i]);
+  		}
+  		return hash;
+	}
+
+	function initArray33(arr99){
+		var arr33List = getArr33List();
+		for(var i = 0, rowLen = arr99.length; i < rowLen; i++){
+			for(var j = 0, colLen = arr99[i].length; j < colLen; j++) {
+				var index = getIndexOfarr33List(i, j);
+				var row33 = i % 3;
+				var col33 = j % 3;
+				arr33List[index][row33][col33] = arr99[i][j];
+				
+			}
+
+		}
+		return arr33List;
+	}
+
+	function getIndexOfarr33List(row, col){
+		return parseInt(row/3)*3 + parseInt(col/3);
+	}
+
+	function getArr33(){
+		var arr33 = new Array(3);
+		for (var i = arr33.length - 1; i >= 0; i--) {
+			arr33[i] = new Array(3);
+		}
+		return arr33;
+	}
+	
+	function getArr33List(){
+		var arr33List = new Array(9);
+		for (var i = arr33List.length - 1; i >= 0; i--) {
+			arr33List[i] = getArr33();
+		}
+		return arr33List;
+	}
+
+
+</script>
+</html>
