@@ -11,71 +11,71 @@ LIST CARD OF SHADOW HUNTERS
 S: Single Use
 E: Equitment
 
-Banana Peel                         S              Give one of your equipment cards to another character. If you have no equipment cards, you receive 1 point of damage.
+Banana Peel                     S              Give one of your equipment cards to another character. If you have no equipment cards, you receive 1 point of damage.
 Bloodthirsty Spider             S              You give 2 points of damage to any character and receive 2 points of damage yourself.
-Butcher Knife                       E             On a successful attack, you give 1 point of extra damage.
-Chainsaw                              E             On a successful attack, you give 1 point of extra damage.
-Diabolic Ritual                     S              If you are a Shadow, you may reveal your identity. If you do, your damage points are reset to 0.
-Dynamite                              S              Roll the 2 dice and give 3 points of damage to all characters in the location designated by the total number rolled (nothing happens on a 7).
-Handgun                               E             Your attack range becomes every Area but your own.
-Machine Gun                       E             Your attacks target all characters within your attack range (roll the dice once and apply the same damage to all affected characters).
-Masamune                           E             You MUST attack if possible. Your attacks are executed by a single roll of the 4-sided die (you cannot fail).
-Moody Goblin                      S              You steal an equipment card from any character.
-Moody Goblin                      S              You steal an equipment card from any character.
-Rusted Broad Axe               E             On a successful attack, you give 1 point of extra damage.
-Spiritual Doll                         S              Pick any character and roll a 6-sided die. If the die number is 1 to 4, you give 3 points of damage to that   character. If the die number is 5 or 6, you get 3 points of damage
-Vampire Bat                         S              You give 2 points of damage to any character and heal 1 point of your own damage.
-Vampire Bat                         S              You give 2 points of damage to any character and heal 1 point of your own damage.
-Vampire Bat                         S              You give 2 points of damage to any character and heal 1 point of your own damage.
+Diabolic Ritual                 S              If you are a Shadow, you may reveal your identity. If you do, your damage points are reset to 0.
+Dynamite                        S              Roll the 2 dice and give 3 points of damage to all characters in the location designated by the total number rolled (nothing happens on a 7).
+Moody Goblin                    S              You steal an equipment card from any character.
+Moody Goblin                    S              You steal an equipment card from any character.
+Spiritual Doll                  S              Pick any character and roll a 6-sided die. If the die number is 1 to 4, you give 3 points of damage to that   character. If the die number is 5 or 6, you get 3 points of damage
+Vampire Bat                     S              You give 2 points of damage to any character and heal 1 point of your own damage.
+Vampire Bat                     S              You give 2 points of damage to any character and heal 1 point of your own damage.
+Vampire Bat                     S              You give 2 points of damage to any character and heal 1 point of your own damage.
+Butcher Knife                   	E             On a successful attack, you give 1 point of extra damage.
+Chainsaw                        	E             On a successful attack, you give 1 point of extra damage.
+Handgun                         	E             Your attack range becomes every Area but your own.
+Machine Gun                     	E             Your attacks target all characters within your attack range (roll the dice once and apply the same damage to all affected characters).
+Masamune                        	E             You MUST attack if possible. Your attacks are executed by a single roll of the 4-sided die (you cannot fail).
+Rusted Broad Axe                	E             On a successful attack, you give 1 point of extra damage.
 
 16 WHITE CARDS                            
 S: Single Use
 E: Equitment
                                
-Advent                                   S              If you are a Hunter, you may reveal your identity. If you do, your damage points are reset to 0.
-Blessing                                 S              Pick a character other than yourself and roll a 6-sided die. That character heals the amount of damage shown on the die.
-Chocolate (ex)                     S              If your character's name begins with A, E, or U, you may reveal your identity. If you do, your damage points are reset to 0.
-Concealed Knowledge        S              Once this turn is over, you will take another turn.
-Disenchant Mirror (ex)       S              If your character's name begins with V or W, you must reveal your identity.
-First Aid                                 S              Set a character's damage at 7 (you may choose yourself).
-Flare of Judgement             S              All characters except yourself receive 2 points of damage.
-Fortune Brooch                    E             You receive no damage from the Weird Woods.
-Guardian Angel                    S              You get no damage from another character attack until your next turn.
-Holy Robe                            E             Your attacks do 1 less point of damage and the amount of damage you receive from attacks is reduced by 1.
-Holy Water of healing        S              Heal 2 points of your damage.
-Holy Water of healing        S              Heal 2 points of your damage.
-Mystic Compas                   E             You may roll twice to move and choose which result to use.
-Silver Rosary                        E             If you attack and kill another character, you steal all their equipment.
-Spear of Longinus               E             If you are a Hunter and your attack is successful, you may reveal your identity. If you do, your attack does 2 extra points of damage.
-Talisman                               E             You receive no damage from the black cards "Bloodthirsty Spider", "Vampire Bat" and "Dynamite".
+Advent                          S              If you are a Hunter, you may reveal your identity. If you do, your damage points are reset to 0.
+Blessing                        S              Pick a character other than yourself and roll a 6-sided die. That character heals the amount of damage shown on the die.
+Chocolate (ex)                  S              If your character's name begins with A, E, or U, you may reveal your identity. If you do, your damage points are reset to 0.
+Concealed Knowledge             S              Once this turn is over, you will take another turn.
+Disenchant Mirror (ex)          S              If your character's name begins with V or W, you must reveal your identity.
+First Aid                       S              Set a character's damage at 7 (you may choose yourself).
+Flare of Judgement              S              All characters except yourself receive 2 points of damage.
+Guardian Angel                  S              You get no damage from another character attack until your next turn.
+Holy Water of healing           S              Heal 2 points of your damage.
+Holy Water of healing           S              Heal 2 points of your damage.
+Fortune Brooch                  	E             You receive no damage from the Weird Woods.
+Holy Robe                       	E             Your attacks do 1 less point of damage and the amount of damage you receive from attacks is reduced by 1.
+Mystic Compas                   	E             You may roll twice to move and choose which result to use.
+Silver Rosary                   	E             If you attack and kill another character, you steal all their equipment.
+Spear of Longinus               	E             If you are a Hunter and your attack is successful, you may reveal your identity. If you do, your attack does 2 extra points of damage.
+Talisman                        	E             You receive no damage from the black cards "Bloodthirsty Spider", "Vampire Bat" and "Dynamite".
                                 
 16 GREEN CARDS 
- Aid                          Hunter heal 1 damage (if you have none take 1 damage)
-Anger                     Hunter or Shadow - give 1 equipment to current player or take 1 damage
-Anger                     Hunter or Shadow - give 1 equipment to current player or take 1 damage
-Blackmail               Hunter or Neutral - give 1 equipment to current player or take 1 damage
-Blackmail               Hunter or Neutral - give 1 equipment to current player or take 1 damage
-Bully (ex)              HP less or equal 11 (A,B,C,E,U) take 1 damage
-Exorcism               Shadow - take 2 damage
-Greed                     Neutral or Shadow - give 1 equipment to current player or take 1 damage
-Greed                     Neutral or Shadow - give 1 equipment to current player or take 1 damage
-Huddle                   Shadow heal 1 damage (if you have none take 1 damage)
-Nurturance            Neutral heal 1 damage (if you have none take 1 damage)
-Predicition             Show your character card to current player
-Slap                        Hunter - take 1 damage
-Slap                        Hunter - take 1 damage
-Spell                       Shadow - take 1 damage
-Tough Lesson (ex)HP greater or equal 12 (D,F,G,V,W) take 2 damage
+Aid                             Hunter heal 1 damage (if you have none take 1 damage)
+Anger                           Hunter or Shadow - give 1 equipment to current player or take 1 damage
+Anger                     		Hunter or Shadow - give 1 equipment to current player or take 1 damage
+Blackmail               		Hunter or Neutral - give 1 equipment to current player or take 1 damage
+Blackmail               		Hunter or Neutral - give 1 equipment to current player or take 1 damage
+Bully (ex)              		HP less or equal 11 (A,B,C,E,U) take 1 damage
+Exorcism               			Shadow - take 2 damage
+Greed                     		Neutral or Shadow - give 1 equipment to current player or take 1 damage
+Greed                     		Neutral or Shadow - give 1 equipment to current player or take 1 damage
+Huddle                   		Shadow heal 1 damage (if you have none take 1 damage)
+Nurturance            			Neutral heal 1 damage (if you have none take 1 damage)
+Predicition             		Show your character card to current player
+Slap                        	Hunter - take 1 damage
+Slap                        	Hunter - take 1 damage
+Spell                       	Shadow - take 1 damage
+Tough Lesson (ex)        		HP greater or equal 12 (D,F,G,V,W) take 2 damage
 
 6 AREA CARDS
 
 
-(2) (3) Hermit's Cabin (Green)             You may draw a Hermit Card.
-(4) (5) Underworld Gate (Purple)          You may draw a card form the stack of your choice.
-(6)      Church (white)                           You may draw a White Card.
+(2) (3) Hermit's Cabin (Green)             		You may draw a Hermit Card.
+(4) (5) Underworld Gate (Purple)          		You may draw a card form the stack of your choice.
+(6)      Church (white)                         You may draw a White Card.
 (8)      Cemetery (Black)                       You may draw a Black Card.
-(9)      Weird Woods (Grey)                  You may either give 2 damage to any player or heal 1 damage  of any player.
-(10)    Erstwhile Altar (Brown)              You may steal an Equitment Card from any player.
+(9)      Weird Woods (Grey)                  	You may either give 2 damage to any player or heal 1 damage  of any player.
+(10)    Erstwhile Altar (Brown)              	You may steal an Equitment Card from any player.
 
 
 
@@ -96,10 +96,8 @@ Special Ability: After attacking, you may inflict 2 points of damage to yourself
 Win Condition: You are the first character to die, or you survive and the Hunters achieve their Win Condition.
 Special Ability: Once a character dies, your identity will be revealed.
 
-
 3 HUNTERS
  
-
 -Emi (10 HP)
 Win Condition: All Shadows are dead.
 Special Ability: When you move, you can move to an adjacent location instead of rolling the dice.
@@ -112,8 +110,6 @@ Special Ability: You may inflict damage to a player equal to the roll of a 4-sid
 
 3 SHADOWS
 
-
-
 -Unknown (11 HP)
 Win Condition: All Hunters are dead, or 3 Neutrals are dead.
 Special Ability: When given a Hermit card, you may lie (you do not have to reveal yourself to use this).
@@ -124,9 +120,11 @@ Special Ability: If you attack a player and inflict damage, you may heal 2 point
 Win Condition: All Hunters are dead, or 3 Neutrals are dead.
 Special Ability: After being attacked by a player, you may immediately attack back that player.
 
+
+
+
 11 CHARACTERS OF SHADOW HUNTERS EXPANSION
 5 NEUTRALS
-
 
 -Agnes (8 HP)
 Win Condition: The player above you in the player list reaches their Win Condition.
@@ -140,25 +138,11 @@ Special Ability: Heal 1 point of your own damage at the start of your turn.
 -David (13 HP)
 Win Condition: You possess 3 or more of the following Equipment cards: "Talisman", "Spear of Longinus", "Holy Robe", and "Silver Rosary".
 Special Ability: You may loot one Equipment card of your choice from any dead player. (Only once per game).
-
-
 - Bob (10 HP)
 Win Condition: You have 4(5) or more Equitment cards.
 Special Ability: (Robbery): If you attack kill a character, you take all the Equitment cards that character had.
 
-
-
-
-
-
-
-
-
-
-
-
 3 HUNTERS
-
 
 -Ellen (10 HP)
 Win Condition: All Shadows are dead.
@@ -169,8 +153,8 @@ Special Ability: (Dynamite Nurse) At the start of your next turn, set the damage
 -Gregor (14 HP)
 Win Condition: All Shadows are dead.
 Special Ability: (Ghostly Barrler) Can only be used when your turn is over. You cannot receive any damage until the start of your next turn. (Only once per game).
-3 SHADOWS
 
+3 SHADOWS
 
 -Ultrasoul (11 HP)
 Win Condition: All Hunters are dead, or 3 Neutrals are dead.
