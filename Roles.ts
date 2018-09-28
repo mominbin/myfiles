@@ -99,6 +99,49 @@ interface Role{
     setBuff(buff: Buff);
     
 }
+class Utils{
+    // get the raomd number between 1 to 10
+    static getRandom():number{
+        return Math.floor(Math.random()*10) + 1
+    }
+
+    static random(minNum:number,maxNum:number){
+        let result = Utils.getRandom();
+        if (result >= minNum && result <= maxNum){
+            return result;
+        } else {
+            Utils.random(minNum, maxNum);
+        }
+    }
+}
+abstract class Player{
+    ID: number;
+    role: Role;
+    phase: string;
+    castDice(type: string): number{ // There are four types. 1. movement, 2. diffValueAttack, 3. fourPointDiceAttack, 4. sixPointDiceAttack
+        let num:number;
+        if (type == "movement"){
+            num = Utils.random(1,6) + Utils.random(1, 4);
+        } else if(type == "diffValueAttack"){
+            num = Math.abs(Utils.random(1,6) - Utils.random(1, 4));
+        } else if(type == "fourPointDiceAttack"){
+            num = Utils.random(1, 4);
+        } else if(type == "sixPointDiceAttack"){
+            num = Utils.random(1, 6);
+        }
+        return num;
+    }
+    move(position:number){
+        if(position == this.role.getCurrentArea()){
+            return "error! you must leave your current area!";
+        }
+        this.role.setCurrentArea(position);
+    }
+    attack(target: Player, value: number){
+        let current
+        target.role.setCurrentHP(target.role.getCurrentHP() - value);
+    }
+}
 
 abstract class AbstracRole implements Role{
     name: Name;
